@@ -1,30 +1,35 @@
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, Platform, ScrollView, SafeAreaView } from 'react-native';
 
 export default function HomeScreen() {
+  const items = Array.from({ length: 100 }, (_, i) => `Item ${i + 1}`);
+
   return (
-    <ThemedView>
-        <ThemedText>Hello</ThemedText>
-    </ThemedView>
+  <SafeAreaView>
+    <ScrollView contentContainerStyle={styles.container}>
+        {items.map((item, index) => (
+          <ThemedView key={index} style={styles.item}>
+            <ThemedText style={styles.text}>{item}</ThemedText>
+          </ThemedView>
+        ))}
+    </ScrollView>
+  </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+  container: {
+    paddingVertical: 20,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  item: {
+    backgroundColor: '#1e40af',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    borderRadius: 10,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  text: {
+    fontSize: 16,
   },
 });
