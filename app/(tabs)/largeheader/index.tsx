@@ -1,5 +1,6 @@
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { Stack } from 'expo-router';
 import { Image, StyleSheet, Platform, ScrollView, SafeAreaView } from 'react-native';
 
 export default function HomeScreen() {
@@ -7,7 +8,7 @@ export default function HomeScreen() {
 
   return (
   <SafeAreaView>
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={styles.container}>
         {items.map((item, index) => (
           <ThemedView key={index} style={styles.item}>
             <ThemedText style={styles.text}>{item}</ThemedText>
