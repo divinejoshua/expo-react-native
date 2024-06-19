@@ -9,9 +9,13 @@ export default function Layout() {
                 headerShadowVisible: false,
                 headerBlurEffect : 'regular' , //Not working
                 headerTransparent : true,
-                //Large header
+
                 headerLargeTitle : true,
-                headerLargeTitleStyle:{ color : "#fed138"}
+                //Search
+                headerSearchBarOptions :{
+                  placeholder : "Search Wetroverse",
+                  hideWhenScrolling : false //Hide search bar when scrolling
+                }
         }} />
     </Stack>
   );

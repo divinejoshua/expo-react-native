@@ -7,7 +7,10 @@ export default function HomeScreen() {
   const items = Array.from({ length: 100 }, (_, i) => `Item ${i + 1}`);
 
   return (
-    <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={styles.container}>
+    <ScrollView
+      contentInsetAdjustmentBehavior="automatic"
+      keyboardDismissMode="on-drag"
+      contentContainerStyle={styles.container}>
         {items.map((item, index) => (
           <ThemedView key={index} style={styles.item}>
             <ThemedText style={styles.text}>{item}</ThemedText>
@@ -22,7 +25,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   item: {
-    backgroundColor: '#1e40af',
+    backgroundColor: '#fed099',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
