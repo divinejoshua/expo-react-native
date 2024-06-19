@@ -14,7 +14,8 @@ export default function Layout() {
                 //Search
                 headerSearchBarOptions :{
                   placeholder : "Search Wetroverse",
-                  hideWhenScrolling : false //Hide search bar when scrolling
+                  hideWhenScrolling : false, //Hide search bar when scrolling
+                  cancelButtonText: "Close me"
                 }
         }} />
     </Stack>
